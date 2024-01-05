@@ -1,0 +1,56 @@
+<!--
+  Generated template for the SelectAddressPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>SelectAddress</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-list-header>
+        Select Delivery Address
+     </ion-list-header>
+    <ion-list radio-group [(ngModel)]="selectedExistingAddress">
+        
+        <ion-item *ngFor="let address of addresses" name = "selectedExistingAddress" text-wrap>
+          <ion-radio value = "{{address}}" (ionSelect)="textInputBoxGen(false)" unchecked></ion-radio>
+          <ion-label *ngIf = "address.default" style = "color:grey;" >(Default)</ion-label>
+          <ion-label>{{address}}</ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-radio value="New Address" (ionSelect)="textInputBoxGen(true)" unchecked></ion-radio>
+          <ion-label>Enter New Address</ion-label>
+        </ion-item>
+      </ion-list>
+
+        <ion-list *ngIf="enterNewAddress">
+
+          <ion-item>
+            <ion-textarea type="text" [(ngModel)]="newAddress.addressLine1" value="" placeholder="Address Line1" required></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <ion-textarea type="text" [(ngModel)]="newAddress.city" value="" placeholder="City" required></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <ion-textarea type="number" [(ngModel)]="newAddress.pinCode" value="" placeholder="Pincode" required></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <ion-checkbox [disabled]="!addresses.length" (ionChange)="toggleDefaultFlag()" [checked] = "defaultAddressFlag"></ion-checkbox>
+            <ion-label>Make this my Default Address</ion-label>
+          </ion-item>
+
+        </ion-list>
+      
+        <button ion-button block (click)="confirmAddress()" >Confirm and Review Order</button>
+
+</ion-content>

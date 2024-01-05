@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+  <ion-title>Orders</ion-title>
+</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item *ngFor="let order of orders" (click)="viewOrder(order)">
+        
+          <h1>Order Number: {{order.orderId}}</h1>
+          <h2 style="float:left">Order Status: {{order.orderStatus}}</h2> 
+          <h2 style="float:right">Price: {{order.totalAmount}}</h2>
+         
+    </ion-item>
+  
+    </ion-list>
+</ion-content>

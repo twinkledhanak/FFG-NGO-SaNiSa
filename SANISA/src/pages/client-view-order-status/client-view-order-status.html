@@ -1,0 +1,42 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ClientViewOrderStatus</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <h3>Order Number: {{order.orderId}}</h3>
+    <h6 *ngIf="order.orderstatus == Not Accepted">
+        <img src="{{progressImgY}}">
+    </h6>
+    <h6 *ngIf="order.orderStatus == 'Pending'">
+        <img src="{{progressImgY}}">
+        <img src="{{progressImgY}}">
+    </h6>
+    <h6 *ngIf="order.orderStatus == 'Out For Delivery'">
+        <img src="{{progressImgY}}">
+        <img src="{{progressImgY}}">
+        <img src="{{progressImgY}}">
+    </h6>
+    <h6 *ngIf="order.orderStatus == 'Delivered'">
+        <img src="{{progressImgY}}">
+        <img src="{{progressImgY}}">
+        <img src="{{progressImgY}}">
+        <img src="{{progressImgY}}">
+    </h6>
+    <h6 >Order Status: {{order.orderStatus}}</h6> 
+    <h6 >Price: {{order.totalAmount}}</h6>
+
+
+    <h6>Product List:</h6>
+    <ion-item *ngFor="let product of productsArray">  
+        {{product.productName}}
+        {{product.unitQuantity}}
+    </ion-item>
+    
+</ion-content>

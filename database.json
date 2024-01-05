@@ -1,0 +1,85 @@
+{
+  "claim" : {
+    "claim1" : {
+      "amt" : 4500,
+      "proof" : {
+        "p1" : "xyz.docx",
+        "p2" : "abc.pdf"
+      },
+      "status" : "approved",
+      "uid" : "user1"
+    }
+  },
+  "feedback" : {
+    "feed1" : {
+      "comment" : "awesome khakhra",
+      "pid" : "product1",
+      "rate" : 4.5,
+      "uid" : "user1"
+    }
+  },
+  "message" : "Let's create the best app ever!!",
+  "order" : {
+    "order1" : {
+      "delivery_pref" : "home",
+      "items" : {
+        "item1" : {
+          "buy_price" : 567,
+          "pid" : "product1",
+          "qty" : 5
+        },
+        "item2" : {
+          "buy_price" : 785,
+          "pid" : "product2",
+          "qty" : 7
+        }
+      },
+      "seller" : "sakhi1",
+      "status" : "not_delivered",
+      "total" : 5000,
+      "uid" : "user1"
+    }
+  },
+  "product" : {
+    "product1" : {
+      "pdesc" : "this is an awesome product",
+      "pimg" : "https://upload.wikimedia.org/wikipedia/commons/c/c6/Khakhra_br%C3%B6d.png",
+      "pname" : "khakhra1",
+      "price" : 400,
+      "ptype" : "a"
+    }
+  },
+  "user" : {
+    "user1" : {
+      "add" : {
+        "add1" : {
+          "address" : "bldg4 sec5 abc colony",
+          "city" : "mumbai",
+          "pin" : 40000,
+          "state" : "MH"
+        },
+        "add2" : {
+          "address" : "another address",
+          "city" : "mumbai",
+          "pin" : 345632,
+          "state" : "MH"
+        }
+      },
+      "cart" : {
+        "item1" : {
+          "pid" : "product1",
+          "qty" : 3
+        },
+        "item2" : {
+          "pid" : "product2",
+          "qty" : 3
+        }
+      },
+      "email" : "user@company.com",
+      "fname" : "test_user_1_first",
+      "lname" : "test_user_1_last",
+      "phnum" : 9876543210,
+      "utype" : "s"
+    }
+  }
+}

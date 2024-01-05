@@ -1,0 +1,20 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": "newData.exists()",
+    "user": {
+    	"$uid": {
+    		".validate": "newData.child('name').isString() &&
+    					  			newData.child('email').isString() &&
+                     	newData.child('phone_num').isNumber() &&
+                      newData.child('phone_num').val() >= 1000000000 &&
+        							newData.child('phone_num').val() <= 9999999999 &&
+        							newData.child('utype').val().length > 1 &&
+                      newData.child('address').child('address').isString() &&
+                      newData.child('address').child('city').isString()&&
+                      newData.child('address').child('pincode').isNumber() "
+                      
+    	}
+    }
+  }
+}

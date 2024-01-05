@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+  <form [formGroup]="registerForm" (ngSubmit)="register(user,password)">
+    
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="user.name" formControlName="name"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label floating>Phone Number</ion-label>
+      <ion-input type="number" [(ngModel)]="user.phoneNumber" formControlName="phoneNumber"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="email" [(ngModel)]="user.email" formControlName="email"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password" formControlName="password"></ion-input>
+    </ion-item>  
+
+    <ion-item>
+      <ion-label floating>Address</ion-label>
+      <ion-input type="text" [(ngModel)]="address.addressLine1" formControlName="addressLine1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>City</ion-label>
+      <ion-input type="text" [(ngModel)]="address.city" formControlName="city"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Pincode</ion-label>
+      <ion-input type="number" [(ngModel)]="address.pinCode" formControlName="pinCode"></ion-input>
+    </ion-item>
+
+    <button ion-button type="submit" block>Register</button>
+ 
+    </form>
+</ion-content>
